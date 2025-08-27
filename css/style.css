@@ -74,6 +74,7 @@ h3 {
 .filter-dropdown__selected p {
   color: var(--text);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .filter-dropdown__selected span {
@@ -85,7 +86,7 @@ h3 {
   font-size: 14px;
   margin-top: 8px;
   width: 16%;
-  padding: 20px 16px 20px 20px;
+  padding: 16px 16px 16px 20px;
   background-color: var(--bg);
   box-shadow: 2px 2px 5px var(--shadow);
   border-radius: 8px;
@@ -93,9 +94,15 @@ h3 {
 
 .filter-dropdown__options li {
   padding: 6px 0rem;
+  cursor: pointer;
 }
+
+.filter-dropdown__options li:hover {
+  color: gray;
+}
+
 
 /* utility */
 .d-none {
-  display: none;
+  display: none !important;
 }

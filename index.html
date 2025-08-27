@@ -29,12 +29,23 @@
         <div class="search-bar"></div>
         <div class="filter-dropdown">
           <div class="filter-dropdown__selected">
-            <p>Filter by Region</p>
-            <span class="material-symbols-outlined">
+            <p onclick="toggleFilter() ">Filter by Region</p>
+            <span
+              onclick="toggleFilter() "
+              id="keyboardUp"
+              class="material-symbols-outlined"
+            >
               keyboard_control_key
             </span>
+            <span
+              onclick="toggleFilter()"
+              id="keyboardDown"
+              class="d-none material-symbols-outlined"
+            >
+              stat_minus_1
+            </span>
           </div>
-          <ul class="filter-dropdown__options">
+          <ul class="filter-dropdown__options d-none">
             <li>Africa</li>
             <li>America</li>
             <li>Asia</li>
