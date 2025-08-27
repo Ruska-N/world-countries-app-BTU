@@ -1,0 +1,48 @@
+:root {
+  /* Light Mode */
+  --bg: hsl(0, 0%, 99%); /* Grey 50 */
+  --elements: hsl(0, 100%, 100%); /* White */
+  --text: hsl(200, 15%, 8%); /* Grey 950 */
+  --input: hsl(0, 0%, 50%); /* Grey 400 */
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  /* Dark Mode */
+  --dark-bg: hsl(207, 26%, 17%); /* Blue 950 */
+  --dark-elements: hsl(209, 23%, 22%); /* Blue 900 */
+  --dark-text: hsl(0, 100%, 100%); /* White */
+  --dark-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Fonts */
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  --bg: var(--dark-bg);
+  --elements: var(--dark-elements);
+  --text: var(--dark-text);
+  --shadow: var(--dark-shadow);
+}
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+h4 {
+  font-size: 14px;
+}
+h3 {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
