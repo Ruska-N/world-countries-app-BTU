@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="./script.js" defer></script>
     <title>World Countries</title>
   </head>
@@ -23,12 +27,35 @@
     <section>
       <div class="filter-tools container">
         <div class="search-bar"></div>
-        <div class="filter-dropdown"></div>
+        <div class="filter-dropdown">
+          <div class="filter-dropdown__selected">
+            <p onclick="toggleFilter()">Filter by Region</p>
+            <span
+              onclick="toggleFilter()"
+              id="keyboardUp"
+              class="material-symbols-outlined"
+            >
+              keyboard_control_key
+            </span>
+            <span
+              onclick="toggleFilter()"
+              id="keyboardDown"
+              class="d-none material-symbols-outlined"
+            >
+              stat_minus_1
+            </span>
+          </div>
+          <ul class="filter-dropdown__options d-none">
+            <li>Africa</li>
+            <li>America</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
+        </div>
       </div>
 
       <div class="countries"></div>
-
     </section>
-
   </body>
 </html>

@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="./script.js" defer></script>
     <title>World Countries</title>
   </head>
@@ -21,8 +25,38 @@
     </header>
 
     <section>
-        <div class="country-descr container"></div>
+      <div class="country-descr container">
+        <a href="./index.html" class="btn back-btn"
+          ><span class="material-symbols-outlined"> arrow_left_alt </span>
+          Back</a
+        >
+        <!-- left side -->
+        <div class="img-flag"><img src="" alt="flag" /></div>
+        <!-- right side -->
+        <div class="country-info">
+          <h2>Belgium</h2>
+          <div class="country-details">
+            <div class="box">
+              <p>Native Name: <span>Belgium</span></p>
+              <p>Population: <span>Belgium</span></p>
+              <p>Region: <span>Belgium</span></p>
+              <p>Sub Region: <span>Belgium</span></p>
+              <p>Capital: <span>Belgium</span></p>
+            </div>
+            <div class="box">
+              <p>Top Level Domain: <span>Belgium</span></p>
+              <p>Currencies: <span>Belgium</span></p>
+              <p>Languages: <span>Belgium</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="country-borders">
+          <p>Border Countries:</p>
+          <button class="btn border-btn"></button>
+          <button class="btn border-btn"></button>
+          <button class="btn border-btn"></button>
+        </div>
+      </div>
     </section>
-
   </body>
 </html>
