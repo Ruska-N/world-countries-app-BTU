@@ -19,7 +19,6 @@ body {
   font-weight: 300;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s, color 0.3s;
 }
 body.dark {
   --bg: var(--dark-bg);
@@ -28,7 +27,7 @@ body.dark {
   --shadow: var(--dark-shadow);
 }
 h1 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
 }
 h2 {
@@ -46,3 +45,45 @@ h3 {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* header styles */
+header {
+  background: var(--elements);
+  box-shadow: 0 2px 5px var(--shadow);
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* dark mode styles */
+.dark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-size: 16px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+}
+body.dark .material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+
+
