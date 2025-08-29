@@ -115,6 +115,11 @@ h3 {
   border: 1px solid red;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
 .btn {
   display: flex;
   align-items: center;
@@ -129,6 +134,11 @@ h3 {
 .back-btn {
   width: 10%;
   margin: 5rem 0rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.border-btn {
+  width: 10%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
