@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
         (c) => c.name.toLowerCase() === countryName.toLowerCase()
       );
       if (country) {
-        showCountry(country);
+        showCountry(country, data);
       }
     });
 });
 
-function showCountry(country) {
+function showCountry(country, allCountries) {
   document.querySelector(".img-flag img").src = country.flags.png;
   document.querySelector(".img-flag img").alt = country.name;
   document.querySelector(".country-info h1").textContent = country.name;
@@ -42,11 +42,27 @@ function showCountry(country) {
   `;
 
   const borders = document.querySelector(".country-borders");
+
   if (country.borders?.length) {
-    const buttons = country.borders
-      .map((code) => `<button class="btn border-btn">${code}</button>`)
+    const borderCountries = country.borders
+      .map((code) => {
+        const neighbor = allCountries.find((c) => c.alpha3Code === code);
+        if (!neighbor) return null;
+        return `<button class="btn border-btn" data-name="${neighbor.name}">${neighbor.name}</button>`;
+      })
+      .filter(Boolean)
       .join("");
-    borders.innerHTML = `<p>Border Countries:</p>${buttons}`;
+
+    borders.innerHTML = `<p>Border Countries:</p>${borderCountries}`;
+
+    document.querySelectorAll(".border-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const newCountryName = btn.dataset.name;
+        window.location.href = `country.html?name=${encodeURIComponent(
+          newCountryName
+        )}`;
+      });
+    });
   } else {
     borders.innerHTML = "<p>No border countries.</p>";
   }

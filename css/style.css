@@ -228,8 +228,9 @@ button {
 }
 
 .border-btn {
-  width: 10%;
+  width: fit-content;
   background-color: var(--bg);
+  color: var(--input);
   box-shadow: var(--shadow) 0px 0px 0px 1px;
 }
 
@@ -268,7 +269,7 @@ a span {
 
 .country-borders {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
 }
