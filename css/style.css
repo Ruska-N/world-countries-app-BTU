@@ -46,3 +46,16 @@ h3 {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
+/* search bar */
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--shadow);
+  background: var(--elements);
+  color: var(--text);
+}
