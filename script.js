@@ -27,7 +27,6 @@ searchInput.addEventListener("input", (e) => {
   displayCountries(filtered);
 });
 
-
 // FILTER DROPDOWN
 function toggleFilter() {
   const arrowIconUp = document.getElementById("keyboardUp");
@@ -48,7 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterOptions.forEach((option) => {
     option.addEventListener("click", () => {
-      const selectedRegion = option.textContent.trim();
+      let selectedRegion = option.textContent.trim();
+
+      // Map "America" → "Americas"
+      if (selectedRegion.toLowerCase() === "america") {
+        selectedRegion = "Americas";
+      }
 
       const filteredCountries = allCountries.filter(
         (country) =>
@@ -57,14 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       displayCountries(filteredCountries);
 
-      // hide options
       document
         .querySelector(".filter-dropdown__options")
         .classList.add("d-none");
-
       document.getElementById("keyboardUp").classList.remove("d-none");
       document.getElementById("keyboardDown").classList.add("d-none");
-
       document.querySelector(".filter-dropdown__selected p").textContent =
         selectedRegion;
     });
@@ -72,8 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // CARDS
-
-
 
 // country cards
 const countriesContainer = document.querySelector(".countries");
