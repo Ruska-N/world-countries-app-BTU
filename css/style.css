@@ -192,12 +192,15 @@ body.dark .material-symbols-outlined {
 .country-descr {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+  margin-bottom: 6rem;
 }
 
 .img-flag {
   width: 45%;
-  border: 1px solid red;
+}
+
+.img-flag img {
+  width: 100%;
 }
 
 button {
@@ -264,5 +267,4 @@ a span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
 }
