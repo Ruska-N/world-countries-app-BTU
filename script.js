@@ -1,9 +1,12 @@
+// Dark Mode Toggle
 const toggleBtn = document.getElementById("darkMode");
 const body = document.body;
 
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
 });
+
+// search input
 const searchInput = document.getElementById("searchInput");
 
 let allCountries = [];
@@ -23,6 +26,8 @@ searchInput.addEventListener("input", e => {
   );
   displayCountries(filtered);
 });
+
+
 // FILTER DROPDOWN
 function toggleFilter() {
   const arrowIconUp = document.getElementById("keyboardUp");
@@ -88,6 +93,10 @@ function toggleFilter() {
 //     });
 //   }
 // });
+
+
+
+// country cards
 const countriesContainer = document.querySelector(".countries");
 
 fetch("data.json")
