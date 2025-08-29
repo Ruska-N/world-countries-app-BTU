@@ -12,16 +12,16 @@ const searchInput = document.getElementById("searchInput");
 let allCountries = [];
 
 fetch("data.json")
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     allCountries = data;
     displayCountries(allCountries);
   })
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 
-searchInput.addEventListener("input", e => {
+searchInput.addEventListener("input", (e) => {
   const query = e.target.value.toLowerCase();
-  const filtered = allCountries.filter(country =>
+  const filtered = allCountries.filter((country) =>
     country.name.toLowerCase().includes(query)
   );
   displayCountries(filtered);
@@ -41,58 +41,37 @@ function toggleFilter() {
 
 // FILTER OPTIONS IN WORK
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const filterOptions = document.querySelectorAll(
-//     ".filter-dropdown__options li"
-//   );
-//   const countriesContainer = document.querySelector(".countries");
+document.addEventListener("DOMContentLoaded", () => {
+  const filterOptions = document.querySelectorAll(
+    ".filter-dropdown__options li"
+  );
 
-//   let countriesData = [];
+  filterOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      const selectedRegion = option.textContent.trim();
 
-//   fetch("./data.json")
-//     .then((res) => res.json())
-//     .then((data) => {
-//       countriesData = data;
-//     })
-//     .catch((err) => {
-//       console.error("Error of loading data.json:", err);
-//     });
+      const filteredCountries = allCountries.filter(
+        (country) =>
+          country.region.toLowerCase() === selectedRegion.toLowerCase()
+      );
 
-//   filterOptions.forEach((option) => {
-//     option.addEventListener("click", () => {
-//       const selectedRegion = option.textContent.trim();
+      displayCountries(filteredCountries);
 
-//       const filtered = countriesData.filter(
-//         (country) =>
-//           country.region.toLowerCase() === selectedRegion.toLowerCase()
-//       );
+      // hide options
+      document
+        .querySelector(".filter-dropdown__options")
+        .classList.add("d-none");
 
-//       renderCountries(filtered);
-//     });
-//   });
+      document.getElementById("keyboardUp").classList.remove("d-none");
+      document.getElementById("keyboardDown").classList.add("d-none");
 
-//   function renderCountries(countries) {
-//     countriesContainer.innerHTML = "";
+      document.querySelector(".filter-dropdown__selected p").textContent =
+        selectedRegion;
+    });
+  });
+});
 
-//     if (countries.length === 0) {
-//       countriesContainer.innerHTML = "<p>Empty page.</p>";
-//       return;
-//     }
-
-//     countries.forEach((country) => {
-//       const countryCard = document.createElement("div");
-//       countryCard.classList.add("country-card");
-
-//       countryCard.innerHTML = `
-//         <div class="flag">${country.flag || "🏳️"}</div>
-//         <div class="name">${country.name}</div>
-//         <div class="region">${country.region}</div>
-//       `;
-
-//       countriesContainer.appendChild(countryCard);
-//     });
-//   }
-// });
+// CARDS
 
 
 
@@ -100,15 +79,15 @@ function toggleFilter() {
 const countriesContainer = document.querySelector(".countries");
 
 fetch("data.json")
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     displayCountries(data);
   })
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 
 function displayCountries(countries) {
   countriesContainer.innerHTML = "";
-  countries.forEach(country => {
+  countries.forEach((country) => {
     const card = document.createElement("div");
     card.classList.add("country-card");
 
@@ -123,10 +102,11 @@ function displayCountries(countries) {
     `;
 
     card.addEventListener("click", () => {
-      window.location.href = `country.html?name=${encodeURIComponent(country.name)}`;
+      window.location.href = `country.html?name=${encodeURIComponent(
+        country.name
+      )}`;
     });
 
     countriesContainer.appendChild(card);
   });
 }
-
