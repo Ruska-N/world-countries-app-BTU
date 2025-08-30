@@ -21,20 +21,28 @@
   </head>
   <body>
     <header>
-      <div class="header container"></div>
+      <div class="header container">
+        <h1 class="logo">Where in the world?</h1>
+        <button id="darkMode" class="dark-btn">
+          <span class="material-symbols-outlined">dark_mode</span>
+          <span class="dark-label">Dark Mode</span>
+        </button>
+      </div>
     </header>
 
     <section>
       <div class="filter-tools container">
-        <div class="search-bar"></div>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a country..."
+          />
+        </div>
         <div class="filter-dropdown">
-          <div class="filter-dropdown__selected">
-            <p onclick="toggleFilter()">Filter by Region</p>
-            <span
-              onclick="toggleFilter()"
-              id="keyboardUp"
-              class="material-symbols-outlined"
-            >
+          <div onclick="toggleFilter() " class="filter-dropdown__selected">
+            <p>Filter by Region</p>
+            <span id="keyboardUp" class="material-symbols-outlined">
               keyboard_control_key
             </span>
             <span
@@ -55,7 +63,7 @@
         </div>
       </div>
 
-      <div class="countries"></div>
+      <div class="countries container"></div>
     </section>
   </body>
 </html>
