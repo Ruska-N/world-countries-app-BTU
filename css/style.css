@@ -139,6 +139,7 @@ body.dark .material-symbols-outlined {
 /* FILTER DROPDOWN */
 .filter-dropdown {
   width: 15%;
+  cursor: pointer;
 }
 
 .filter-dropdown__selected {
