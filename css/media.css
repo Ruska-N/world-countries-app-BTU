@@ -4,6 +4,24 @@
     }
 }
 
+@media only screen and (max-width: 1120px) {
+
+    .country-descr,
+    .country-details {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .country-details {
+        gap: 64px;
+    }
+
+    .img-flag,
+    .country-info {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .container {
         width: 95%;
@@ -19,19 +37,8 @@
         margin-top: 2.5rem;
     }
 
-    .country-descr,
-    .country-details {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
     .country-details {
         gap: 64px;
-    }
-
-    .img-flag,
-    .country-info {
-        width: 100%;
     }
 
     /* */
