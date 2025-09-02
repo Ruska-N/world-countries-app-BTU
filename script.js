@@ -2,8 +2,18 @@
 const toggleBtn = document.getElementById("darkMode");
 const body = document.body;
 
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+}
+
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 });
 
 // search input
@@ -91,14 +101,14 @@ function displayCountries(countries) {
     card.classList.add("country-card");
 
     card.innerHTML = `
-      <img src="${country.flags.png}" alt="Flag of ${country.name}">
-      <div class="card-body">
-        <h3>${country.name}</h3>
-        <h4><b>Population:</b> ${country.population.toLocaleString()}</h4>
-        <h4><b>Region:</b> ${country.region}</h4>
-        <h4><b>Capital:</b> ${country.capital}</h4>
-      </div>
-    `;
+  <img src="${country.flags.png}" alt="Flag of ${country.name}">
+  <div class="card-body">
+    <h3>${country.name}</h3>
+    <h4>Population: <span>${country.population.toLocaleString()}</span></h4>
+    <h4>Region: <span>${country.region}</span></h4>
+    <h4>Capital: <span>${country.capital}</span></h4>
+  </div>
+`;
 
     card.addEventListener("click", () => {
       window.location.href = `country.html?name=${encodeURIComponent(

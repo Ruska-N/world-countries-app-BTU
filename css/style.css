@@ -81,6 +81,20 @@ h4 {
   padding: 20px;
 }
 
+.card-body h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.card-body h4 {
+  margin: 6px 0;
+}
+
+.card-body h4 span {
+  font-weight: 300;
+}
+
 /* header styles */
 header {
   background: var(--elements);
