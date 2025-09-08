@@ -5,6 +5,7 @@
 }
 
 @media only screen and (max-width: 1120px) {
+
   .country-descr,
   .country-details {
     flex-direction: column;
@@ -18,6 +19,10 @@
   .img-flag,
   .country-info {
     width: 100%;
+  }
+
+  .filter-dropdown {
+    width: 170px;
   }
 }
 
@@ -41,13 +46,15 @@
     gap: 20px;
   }
 
+  .filter-dropdown {
+    width: 160px;
+  }
+
   .search-bar {
     width: 100%;
   }
 
-  .filter-dropdown {
-    width: 40%;
-  }
+
 
   .filter-dropdown__selected,
   .filter-dropdown__options {
